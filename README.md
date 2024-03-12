@@ -28,11 +28,11 @@ If not logged in, it will be redirected to Login/Signup page and simultaneously 
 
 If not signed up, you need to sign up and simultaneously redirected to Gitpod in a new tab where current tab will show hyperexecute dashboard.--->
 
-# Pre-requisites
+## Pre-requisites
 
 Before using HyperExecute, you have to download HyperExecute CLI corresponding to the host OS. Along with it, you also need to export the environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile) page.
 
-## Download HyperExecute CLI
+### Download HyperExecute CLI
 
 HyperExecute CLI is the CLI for interacting and running the tests on the HyperExecute Grid. The CLI provides a host of other useful features that accelerate test execution. In order to trigger tests using the CLI, you need to download the HyperExecute CLI binary corresponding to the platform (or OS) from where the tests are triggered:
 
@@ -42,7 +42,7 @@ Also, it is recommended to download the binary in the project's parent directory
 * Linux: https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
 * Windows: https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
 
-## Configure Environment Variables
+### Configure Environment Variables
 
 Before the tests are run, please set the environment variables LT_USERNAME & LT_ACCESS_KEY from the terminal. The account details are available on your [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile) page.
 
@@ -104,12 +104,20 @@ framework:
 jobLabel: ['HyperExecute', 'XCUI', 'Real Device']
 ```
 
-## Execute the XCUI tests on HyperExecute
+## Execute your Test Suite
 
-Run the following command on the terminal to trigger the tests.
+NOTE: In case of macOS, if you get a permission denied warning while executing CLI, simply run **`chmod u+x ./hyperexecute`** to allow permission. In case you get a security popup, allow it from your **System Preferences** → **Security & Privacy** → **General tab**.
+
+Run the below command in your terminal at the root folder of the project:
 
 ```bash
-./hyperexecute --config <yaml_file_path>
+./hyperexecute --config <path_of_yaml_file>
+```
+
+OR use this command if you have not exported your username and access key in the step 2.
+
+```bash
+./hyperexecute --user <your_username> --key <your_access_key> --config <path_of_yaml_file>
 ```
 
 ## Navigation in Automation Dashboard
