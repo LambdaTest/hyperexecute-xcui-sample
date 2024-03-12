@@ -87,9 +87,9 @@ maxRetries: 2
 framework:
   name: "ios/xcui"
   args:
-  # highlight-next-line
+
     appPath: <RELATIVE_APP_PATH>
-    # highlight-next-line
+
     testSuitePath: <RELATIVE_TEST_SUITE_PATH>
     video: true
     filters:
@@ -104,24 +104,13 @@ framework:
 jobLabel: ['HyperExecute', 'XCUI', 'Real Device']
 ```
 
-:::tip
-You can also upload your **application** to the LambdaTest servers using our <b>REST API</b>. You need to provide your <b>Username</b> and <b>AccessKey</b> in the format `Username:AccessKey` in the <b>cURL</b> command for authentication.
+## Execute the XCUI tests on HyperExecute
 
-Enter your local path of the code repository instead of `<YOUR_LOCAL_APP_PATH>` in the below cURL command.
-
-<div className="lambdatest__codeblock">
-<CodeBlock className="language-bash">
-{`curl -u "${ YOUR_LAMBDATEST_USERNAME()}:${ YOUR_LAMBDATEST_ACCESS_KEY()}" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"<YOUR_LOCAL_APP_PATH>"" -F "name="sampleApp""
-`}
-</CodeBlock>
-</div>
-
-Enter your `<APP_ID>` in the YAML file in the `framework` flag:
+Run the following command on the terminal to trigger the tests.
 
 ```bash
-appId: lt://<APP_ID>
+./hyperexecute --config <yaml_file_path>
 ```
-:::
 
 ## Navigation in Automation Dashboard
 
