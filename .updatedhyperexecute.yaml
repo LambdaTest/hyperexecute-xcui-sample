@@ -1,0 +1,117 @@
+version: "0.2"
+user: johnwick190501
+key: r2YziUtVVwpZlmhexU2Fd0uMD8O5KzxTqIbBmdAh2trazaxeki
+testSuites: []
+preDirectives:
+    commands: []
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+postDirectives:
+    commands: []
+    shell: ""
+    workingDirectory: ""
+jobLabel:
+    - HyperExecute
+    - XCUI
+    - Real Device
+runson: ios
+autosplit: true
+concurrency: 2
+testDiscoveryResult:
+    - LambdaUiKitIOSUITestsLaunchTests/testLaunch
+    - LambdaUiKitIOSUITests/testverifyAppLaunch
+testDiscoveryResult2D:
+    - - LambdaUiKitIOSUITestsLaunchTests/testLaunch
+    - - LambdaUiKitIOSUITests/testverifyAppLaunch
+tunnelOpts:
+    testsPerTunnel: 10
+retryOnFailure: true
+maxRetries: 2
+jobID: b985e71e-b125-42b0-87ef-d2bfe236e1e4
+codeDirectory: hyperexecute-xcui-sample
+framework:
+    name: ios/xcui
+    flags: []
+    discoveryFlags: []
+    discoveryType: ""
+    runnerFlags: []
+    workingDirectory: ""
+    isTestNGXMLSuite: false
+    defaultReports: false
+    args:
+        appPath: LambdaUiKitIOS.ipa
+        testSuitePath: ProverbialTest.ipa
+        xcTestPlanPath: ""
+        shards:
+            mappings: []
+        filters:
+            attributes:
+                - type: className
+                  values:
+                    - LambdaUiKitIOSUITestsLaunchTests
+                  conjunction: ""
+                - type: testName
+                  values:
+                    - LambdaUiKitIOSUITests/testverifyAppLaunch
+                  conjunction: ""
+        devices:
+            - .*
+        deviceSelectionStrategy: any
+        appId: lt://APP1016043281710231987314154
+        testSuiteAppId: lt://APP1016020161710231991409307
+        xcTestPlanId: ""
+        video: true
+        deviceLog: true
+        buildName: ""
+        skipXMLOnRun: false
+        skipInstall: false
+        disableReleaseDevice: false
+        platformName: ""
+        isRealMobile: false
+        avoidAppLaunch: false
+        queueTimeout: 0
+        uninstallPreviousBuild: false
+        language: ""
+        locale: ""
+        preservedDevice: false
+        fixedIP: ""
+        resignApp: true
+        minorOsVersion: false
+        playwrightRD: false
+        mobileDC: true
+        skipUninstallPreviousBuild: false
+    additional_args: null
+    licenseKey: ""
+    userdefinediscovery: false
+    toscaArgs: null
+    version: ""
+    downloadURL: ""
+    baseCommand: ""
+cypress: false
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+testType: ios/xcui
+combineTasksInMatrixMode: false
+captureScreenRecordingForScenarios: false
+maxRetriesPreSteps: 0
+triggerMode: true
+sourcePayload:
+    platform: realDevice
+    verifySSL: true
+collectLocalGitData: true
+dynamicAllocation: false
+appium: false
+platformConfig: null
+differentialUpload:
+    enabled: false
+    ttlHours: null
+    forcedDisabled: false
+project:
+    id: ""
+    name: ""
+    type: default
+meta: {}
+alwaysRunPostSteps: false
+errorCategorizedOnFailureOnly: false
+storageType: ""

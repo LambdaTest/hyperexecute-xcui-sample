@@ -1,0 +1,22 @@
+version: "0.2"
+concurrency: 2
+runson: ios
+autosplit: true
+maxRetries: 2
+retryOnFailure: true
+framework:
+  name: "ios/xcui"
+  args:
+    appPath: LambdaUiKitIOS.ipa
+    testSuitePath: ProverbialTest.ipa
+    video: true
+    filters:
+      attributes:
+      - type: className
+        values: ["LambdaUiKitIOSUITestsLaunchTests"]
+      - type: testName
+        values: ["LambdaUiKitIOSUITests/testverifyAppLaunch"]
+    deviceSelectionStrategy: any
+    devices: [".*"]
+
+jobLabel: ['HyperExecute', 'XCUI', 'Real Device']
