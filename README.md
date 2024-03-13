@@ -9,7 +9,7 @@ The overall experience helps teams test code and fix issues at a much faster pac
 * <b>LambdaTest Support</b>: [support@lambdatest.com](mailto:support@lambdatest.com)
 
 To know more about how HyperExecute does intelligent Test Orchestration, do check out [HyperExecute Getting Started Guide](https://www.lambdatest.com/support/docs/getting-started-with-hyperexecute/)
-<!--
+
 [<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.svg" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=jav/a&utm_term=testng)
 
  ## Gitpod
@@ -20,12 +20,23 @@ Follow the below steps to run Gitpod button:
 2. Login with Lambdatest credentials and it will be redirected to Gitpod editor in new tab and current tab will show hyperexecute dashboard.
 
 [<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.svg" />](https://hyperexecute.lambdatest.com/hyperexecute/jobs?type=gitpod&framework=TestNG)
---- -->
-<!---If logged in, it will be redirected to Gitpod editor in new tab where current tab will show hyperexecute dashboard.
+
+<!---
+If logged in, it will be redirected to Gitpod editor in new tab where current tab will show hyperexecute dashboard.
 
 If not logged in, it will be redirected to Login/Signup page and simultaneously redirected to Gitpod editor in a new tab where current tab will show hyperexecute dashboard.
 
 If not signed up, you need to sign up and simultaneously redirected to Gitpod in a new tab where current tab will show hyperexecute dashboard.--->
+
+# How to run Selenium automation tests on HyperExecute (using TestNG framework)
+
+* [Pre-requisites](#pre-requisites)
+   - [Download HyperExecute CLI](#download-hyperexecute-cli)
+   - [Configure Environment Variables](#configure-environment-variables)
+
+* [Configure YAML File](#configure-yaml-in-your-test-suite)
+* [Execute your Test Suite](#execute-your-test-suite)
+* [Navigation in Automation Dashboard](#navigation-in-automation-dashboard)
 
 ## Pre-requisites
 
@@ -68,7 +79,7 @@ set LT_ACCESS_KEY=LT_ACCESS_KEY
 
 ## Configure YAML in your Test Suite
 
-Enter your `<RELATIVE_APP_PATH>` and `<RELATIVE_TEST_SUITE_PATH>` in the YAML file
+Enter your relative app and test suite path for the `appPath` and `testSuitePath` flags in the YAML file. This YAML file is present in the root directory of this sample repository.
 
 ```bash
 ---
@@ -87,9 +98,9 @@ framework:
   name: "ios/xcui"
   args:
 
-    appPath: <RELATIVE_APP_PATH>
+    appPath: LambdaUiKitIOS.ipa #enter your relative app path
 
-    testSuitePath: <RELATIVE_TEST_SUITE_PATH>
+    testSuitePath: ProverbialTest.ipa #enter your relative test suite path
     video: true
     filters:
       attributes:
@@ -118,6 +129,13 @@ OR use this command if you have not exported your username and access key in the
 ```bash
 ./hyperexecute --user <your_username> --key <your_access_key> --config <path_of_yaml_file>
 ```
+
+e.g.
+
+```bash
+./hyperexecute --user user1 --key 12345 --config hyperexecute-xcui.yaml
+```
+
 
 ## Navigation in Automation Dashboard
 
