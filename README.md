@@ -10,7 +10,7 @@ The overall experience helps teams test code and fix issues at a much faster pac
 
 To know more about how HyperExecute does intelligent Test Orchestration, do check out [HyperExecute Getting Started Guide](https://www.lambdatest.com/support/docs/getting-started-with-hyperexecute/)
 
-[<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.svg" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=jav/a&utm_term=testng)
+<!-- [<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.svg" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=jav/a&utm_term=testng)
 
  ## Gitpod
 
@@ -19,7 +19,7 @@ Follow the below steps to run Gitpod button:
 1. Click '**Open in Gitpod**' button (You will be redirected to Login/Signup page).
 2. Login with Lambdatest credentials and it will be redirected to Gitpod editor in new tab and current tab will show hyperexecute dashboard.
 
-[<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.svg" />](https://hyperexecute.lambdatest.com/hyperexecute/jobs?type=gitpod&framework=TestNG)
+[<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.svg" />](https://hyperexecute.lambdatest.com/hyperexecute/jobs?type=gitpod&framework=TestNG) -->
 
 <!---
 If logged in, it will be redirected to Gitpod editor in new tab where current tab will show hyperexecute dashboard.
