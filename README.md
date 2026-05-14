@@ -1,192 +1,115 @@
-<img height="100" alt="hyperexecute_logo" src="https://user-images.githubusercontent.com/1688653/159473714-384e60ba-d830-435e-a33f-730df3c3ebc6.png">
+# Run XCUI Tests with HyperExecute on TestMu AI (Formerly LambdaTest)
 
-HyperExecute is a smart test orchestration platform to run end-to-end XCUI tests at the fastest speed possible. HyperExecute lets you achieve an accelerated time to market by providing a test infrastructure that offers optimal speed, test orchestration, and detailed execution logs.
+<p align="center">
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://www.testmuai.com/real-device-cloud/"><img src="https://img.shields.io/badge/Real%20Device%20Cloud-latest-blue.svg?style=for-the-badge&labelColor=000000" alt="Real Device Cloud"></a>
+  <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
+</p>
 
-The overall experience helps teams test code and fix issues at a much faster pace. HyperExecute is configured using a YAML file. Instead of moving the Hub close to you, HyperExecute brings the test scripts close to the Hub!
+## Getting Started
 
-* <b>HyperExecute HomePage</b>: https://www.testmuai.com/hyperexecute
-* <b>TestMu AI HomePage</b>: https://www.testmuai.com
-* <b>TestMu AI Support</b>: [support@testmuai.com](mailto:support@testmuai.com)
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-To know more about how HyperExecute does intelligent Test Orchestration, do check out [HyperExecute Getting Started Guide](https://www.testmuai.com/support/docs/getting-started-with-hyperexecute/)
+With TestMu AI (Formerly LambdaTest), you can run XCUI iOS tests using HyperExecute. This sample shows how to configure XCUI + HyperExecute to run on the TestMu AI cloud.
 
-<!-- [<img alt="Try it now" width="200 px" align="center" src="images/Try it Now.svg" />](https://hyperexecute.lambdatest.com/?utm_source=github&utm_medium=repository&utm_content=jav/a&utm_term=testng)
+- [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
 
- ## Gitpod
+### Prerequisites
 
-Follow the below steps to run Gitpod button:
+- Xcode (latest stable)
+- A [TestMu AI](https://www.testmuai.com/) account with your username and access key
+- [HyperExecute CLI](https://www.testmuai.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/) binary for your OS
+- iOS app (.ipa) and test suite uploaded to TestMu AI
 
-1. Click '**Open in Gitpod**' button (You will be redirected to Login/Signup page).
-2. Login with TestMu AI credentials and it will be redirected to Gitpod editor in new tab and current tab will show hyperexecute dashboard.
+### Setup
 
-[<img alt="Run in Gitpod" width="200 px" align="center" src="images/Gitpod.svg" />](https://hyperexecute.lambdatest.com/hyperexecute/jobs?type=gitpod&framework=TestNG) -->
-
-<!---
-If logged in, it will be redirected to Gitpod editor in new tab where current tab will show hyperexecute dashboard.
-
-If not logged in, it will be redirected to Login/Signup page and simultaneously redirected to Gitpod editor in a new tab where current tab will show hyperexecute dashboard.
-
-If not signed up, you need to sign up and simultaneously redirected to Gitpod in a new tab where current tab will show hyperexecute dashboard.--->
-
-# How to run XCUI tests on HyperExecute — TestMu AI (Formerly LambdaTest)
-
-* [Pre-requisites](#pre-requisites)
-   - [Download HyperExecute CLI](#download-hyperexecute-cli)
-   - [Configure Environment Variables](#configure-environment-variables)
-
-* [Configure YAML File](#configure-yaml-in-your-test-suite)
-* [Execute your Test Suite](#execute-your-test-suite)
-* [Navigation in Automation Dashboard](#navigation-in-automation-dashboard)
-
-## Pre-requisites
-
-Before using HyperExecute, you have to download HyperExecute CLI corresponding to the host OS. Along with it, you also need to export the environment variables *LT_USERNAME* and *LT_ACCESS_KEY* that are available in the [TestMu AI Profile](https://accounts.lambdatest.com/detail/profile) page.
-
-### Download HyperExecute CLI
-
-HyperExecute CLI is the CLI for interacting and running the tests on the HyperExecute Grid. The CLI provides a host of other useful features that accelerate test execution. In order to trigger tests using the CLI, you need to download the HyperExecute CLI binary corresponding to the platform (or OS) from where the tests are triggered:
-
-Also, it is recommended to download the binary in the project's parent directory. Shown below is the location from where you can download the HyperExecute CLI binary:
-
-* Mac: https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
-* Linux: https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
-* Windows: https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
-
-### Configure Environment Variables
-
-Before the tests are run, please set the environment variables LT_USERNAME & LT_ACCESS_KEY from the terminal. The account details are available on your [TestMu AI Profile](https://accounts.lambdatest.com/detail/profile) page.
-
-For macOS:
+Clone and install dependencies:
 
 ```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
+git clone https://github.com/LambdaTest/hyperexecute-xcui-sample && cd hyperexecute-xcui-sample
+chmod +x ./hyperexecute
 ```
 
-For Linux:
+Set your credentials as environment variables.
+
+**macOS / Linux:**
 
 ```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+export LT_TUNNEL="YOUR_TUNNEL_NAME"
 ```
 
-For Windows:
+**Windows:**
 
 ```bash
-set LT_USERNAME=LT_USERNAME
-set LT_ACCESS_KEY=LT_ACCESS_KEY
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+set LT_TUNNEL="YOUR_TUNNEL_NAME"
 ```
 
-## Configure YAML in your Test Suite
-
-Enter your relative app and test suite path for the `appPath` and `testSuitePath` flags in the YAML file. This YAML file is present in the root directory of this sample repository.
+### Run tests
 
 ```bash
----
-version: "0.2"
-
-runson: ios
-
-autosplit: true
-
-concurrency: 1
-
-retryOnFailure: true
-maxRetries: 2
-
-framework:
-  name: "ios/xcui"
-  args:
-
-    appPath: LambdaUiKitIOS.ipa #enter your relative app path
-
-    testSuitePath: ProverbialTest.ipa #enter your relative test suite path
-    video: true
-    filters:
-      attributes:
-      - type: className
-        values: ["LambdaUiKitIOSUITestsLaunchTests"]
-      - type: testName
-        values: ["LambdaUiKitIOSUITests/testverifyAppLaunch"]
-    deviceSelectionStrategy: any
-    devices: [".*"]
-
-jobLabel: ['HyperExecute', 'XCUI', 'Real Device']
+./hyperexecute --user YOUR_USERNAME --key YOUR_ACCESS_KEY --config yaml/hyperexecute.yaml
 ```
 
-## Execute your Test Suite
+View results on your TestMu AI dashboard.
 
-NOTE: In case of macOS, if you get a permission denied warning while executing CLI, simply run **`chmod u+x ./hyperexecute`** to allow permission. In case you get a security popup, allow it from your **System Preferences** → **Security & Privacy** → **General tab**.
+### Local testing with TestMu AI Tunnel
 
-Run the below command in your terminal at the root folder of the project:
+To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
 
-```bash
-./hyperexecute --config <path_of_yaml_file>
+- [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+- [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+- [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+Add the following to your capabilities:
+
+```js
+tunnel: true,
 ```
 
-OR use this command if you have not exported your username and access key in the step 2.
+## Contributions
 
-```bash
-./hyperexecute --user <your_username> --key <your_access_key> --config <path_of_yaml_file>
-```
+Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Xcode version, OS, and HyperExecute CLI version.
 
-e.g.
+## TestMu AI (Formerly LambdaTest) Community
 
-```bash
-./hyperexecute --user user1 --key 12345 --config hyperexecute-xcui.yaml
-```
+Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+  
+## TestMu AI (Formerly LambdaTest) Certifications
 
+Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
 
-## Navigation in Automation Dashboard
+## Learning Resources by TestMu AI (Formerly LambdaTest)
 
-HyperExecute lets you navigate from/to *Test Logs* in Automation Dashboard from/to *HyperExecute Logs*. You also get relevant get relevant XCUI test details like video, network log, commands, Exceptions & more in the Dashboard. Effortlessly navigate from the automation dashboard to HyperExecute logs (and vice-versa) to get more details of the test execution.
+Learn modern testing through tutorials, guides, videos, and weekly updates:
 
-Visit the [HyperExecute Dashboard](https://hyperexecute.lambdatest.com/hyperexecute) and check your Job status. 
+* [TestMu AI Blog](https://www.testmuai.com/blog/)
+* [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
+* [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+* [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
+  
+## LambdaTest is Now TestMu AI
 
-## TestMu AI Community :busts_in_silhouette:
+On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
 
-The [TestMu AI Community](https://community.testmuai.com/) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe.
+Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
 
-## Documentation & Resources :books:
-      
-If you want to learn more about the TestMu AI's features, setup, and usage, visit the [TestMu AI documentation](https://www.testmuai.com/support/docs/). You can also find in-depth tutorials around test automation, mobile app testing, responsive testing, manual testing on [TestMu AI Blog](https://www.testmuai.com/blog/) and [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/).     
-      
- ## About TestMu AI
+Find the new home for [LambdaTest](https://www.testmuai.com).
 
-[TestMu AI](https://www.testmuai.com) is a leading test execution and orchestration platform that is fast, reliable, scalable, and secure. It allows users to run both manual and automated testing of web and mobile apps across 3000+ different browsers, operating systems, and real device combinations. Using TestMu AI, businesses can ensure quicker developer feedback and hence achieve faster go to market. Over 500 enterprises and 1 Million + users across 130+ countries rely on TestMu AI for their testing needs.
+### How LambdaTest Evolved into TestMu AI
 
-[<img height="70" src="https://user-images.githubusercontent.com/70570645/169649126-ed61f6de-49b5-4593-80cf-3391ca40d665.PNG">](https://accounts.lambdatest.com/register)
-      
-## We are here to help you :headphones:
+In 2017, we launched LambdaTest with a simple mission: make testing fast, reliable, and accessible. As LambdaTest grew, we expanded into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the full depth of the testing lifecycle.
 
-* Got a query? we are available 24x7 to help. [Contact Us](mailto:support@testmuai.com)
-* For more info, visit - https://www.testmuai.com
+As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
 
-## 🚀 LambdaTest is Now TestMu AI
+That evolution earned a new name: **TestMu AI**, built for an AI-first future of quality engineering. TestMu is not a new name for us. It is the name of our annual community conference, which has brought together 100,000+ quality engineers to discuss how AI would reshape testing, long before that became an industry norm. 
 
-👋 Welcome to TestMu AI, the next evolution of LambdaTest. As of January 2026, [LambdaTest is Now TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/) - we have evolved from a cross-browser testing cloud into a unified, AI-native quality engineering platform designed for the modern DevOps era.
+What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
 
-Whether you have been part of the LambdaTest community for years or are just discovering TestMu AI, our mission remains the same: to help you ship faster with high-scale test execution, autonomous testing, and deep quality analytics.
+## Support
 
-### 🔄 Our Rebrand Journey
-
-In 2017, we introduced LambdaTest with a clear mission: to become the world's most trusted cloud testing platform. We built a scalable, high-performance test cloud that eliminated flakiness, improved developer feedback cycles, and accelerated release velocity for teams worldwide.
-
-As LambdaTest grew, we expanded the platform into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the entire testing lifecycle. These capabilities enabled teams to test any stack, on any technology, at enterprise scale.
-
-Over time, we rebuilt the architecture to be AI-native from the ground up. What began as LambdaTest's high-performance testing cloud has now evolved into TestMu AI, an AI-native, multi-agent platform redefining modern quality engineering.
-
-We chose the name TestMu AI to reflect our shift towards intelligent, autonomous testing. While our identity has changed, our core technology and commitment to the testing community stay the same.
-
-👉 Find [LambdaTest's New Home](https://www.testmuai.com/).
-
-### 🔭 Explore TestMu AI
-
-The same infrastructure LambdaTest customers relied on, now delivered through autonomous AI agents.
-
-- [KaneAI](https://www.testmuai.com/kane-ai/)
-- [Agent-to-Agent Testing](https://www.testmuai.com/agent-to-agent-testing/)
-- [HyperExecute](https://www.testmuai.com/hyperexecute/)
-- [Real Device Cloud](https://www.testmuai.com/real-device-cloud/)
-- [Pricing](https://www.testmuai.com/pricing/)
-- [Documentation](https://www.testmuai.com/support/docs/)
+Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
